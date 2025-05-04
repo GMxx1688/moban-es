@@ -34,36 +34,46 @@ $(document).ready(function() {
 
 </head>
 <body>	
-    <div class="container">
-        <div class="row">   
+    <div class="cx_fnncqktw">
+        <div class="cx_vcrabmay">   
         	{include file="block/head"}
+
+<div class="cx_breadcrumb">
+    <div class="container">
+        <ul class="cx_breadcrumb__list">
+            <li class="cx_breadcrumb__item"><a href="{$maccms.path}">首页</a></li>
+            <li class="cx_breadcrumb__item"><a href="{:mac_url_type($obj.type_id)}">{$obj.type.type_name}</a></li><li class="cx_breadcrumb__item">{$obj.vod_name}</li>
+        </ul>
+    </div>
+</div>
+
         	
         	<!-- 详细信息 -->
-			<div class="stui-pannel clearfix">
-				<div class="stui-content col-pd clearfix">
-					<div class="stui-content__thumb">											
-						<a class="pic" href="{$obj.vod_playlink}" title="{$obj.vod_name}">
-							<img class="img-responsive lazyload" data-original="{:mac_url_img($obj.vod_pic)}" src="{$maccms.path}statics/img/load.gif"/>
-							<span class="pic-text">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+			<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_spggcsia cx_zuvcilnm cx_xzwoevcx">
+					<div class="cx_cthhjxse">											
+						<a class="cx_nsnnggbw" href="{$obj.vod_playlink}" cx_bbxkoftw="{$obj.vod_name}">
+							<img class="cx_gpstvscg lazyload" cx_qesffrss-original="{:mac_url_img($obj.vod_pic)}" src="{$maccms.path}statics/img/load.cx_fiukilpe"/>
+							<span class="cx_fderntdm">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
 						</a>										
 					</div>
-					<div class="stui-content__detail">
-						<h3 class="title">{$obj.vod_name}<span class="score text-red">{$obj.vod_score}</span></h3>	
-						<p class="data">
-							<span class="text-muted hidden-xs">类型：</span>{$obj.vod_class}
-							<span class="split-line"></span>
-							<span class="text-muted hidden-xs">地区：</span>{$obj.vod_area}
-							<span class="split-line"></span>
-							<span class="text-muted hidden-xs">年份：</span>{$obj.vod_year}		
+					<div class="cx_oybzwwzg">
+						<h3 class="cx_bbxkoftw">{$obj.vod_name}<span class="cx_ahhqwqpf cx_jwtknida">{$obj.vod_score}</span></h3>	
+						<p class="cx_qesffrss">
+							<span class="cx_fgpemvqq cx_jhjquqyl">类型：</span>{$obj.vod_class}
+							<span class="cx_zyjcljfv"></span>
+							<span class="cx_fgpemvqq cx_jhjquqyl">地区：</span>{$obj.vod_area}
+							<span class="cx_zyjcljfv"></span>
+							<span class="cx_fgpemvqq cx_jhjquqyl">年份：</span>{$obj.vod_year}		
 						</p>
 						{if condition="$obj.vod_actor eq null or $obj.vod_actor eq '未知' or $obj.vod_actor eq '内详'"}{else}
-						<p class="data"><span>主演：</span>{$obj.vod_actor|mac_substring=40}</p>{/if}
+						<p class="cx_qesffrss"><span>主演：</span>{$obj.vod_actor|mac_substring=40}</p>{/if}
 						{if condition="$obj.vod_director eq null or $obj.vod_director eq '未知' or $obj.vod_director eq '内详'"}{else}
-						<p class="data"><span>导演：</span>{$obj.vod_director}</p>{/if}
-						<p class="desc hidden-xs">
-							<span class="left text-muted">简介：</span>ES影院推荐好看的{$obj.vod_area}剧{$obj.vod_name}在线观看免费播放地址{$obj.vod_content|mac_filter_html|mac_substring=55} <a href="#desc">详细 &gt;</a>
+						<p class="cx_qesffrss"><span>导演：</span>{$obj.vod_director}</p>{/if}
+						<p class="cx_zlffnhem cx_jhjquqyl">
+							<span class="cx_vcdpolhj cx_fgpemvqq">简介：</span>ES影院推荐好看的{$obj.vod_area}剧{$obj.vod_name}在线观看免费播放地址{$obj.vod_content|mac_filter_html|mac_substring=55} <a href="#cx_zlffnhem">详细 &gt;</a>
 						</p>							    
-						<div class="playbtn">
+						<div class="cx_wrmlwxvm">
 									{notempty name="obj.vod_play_list"}
 {php}$count=1;{/php}
 {maccms:foreach name="obj.vod_play_list" key="play"}
@@ -75,14 +85,14 @@ $(document).ready(function() {
 							
 							
 							
-							<span class="bdsharebuttonbox hidden-xs">
-								<a rel="nofollow" class="bds_more" data-cmd="more" href="" style="float: none; background: #f5f5f5; margin: 0; padding: 0; vertical-align: -2px;">分享 <i class="iconfont icon-share"></i></a>
+							<span class="bdsharebuttonbox cx_jhjquqyl">
+								<a rel="nofollow" class="bds_more" cx_qesffrss-cmd="cx_abhldvdy" href="" style="float: none; background: #f5f5f5; margin: 0; padding: 0; vertical-align: -2px;">分享 <i class="iconfont icon-share"></i></a>
 							</span>	
 						</div>
 					</div>	
-					<div class="stui-content__ad hidden-sm hidden-xs">
+					<div class="cx_dedeknds cx_cxrmyylz cx_jhjquqyl">
 						<!-- 广告  -->
-						<!--<div class="clearfix" style="padding-left: 20px;">
+						<!--<div class="cx_xzwoevcx" style="padding-cx_vcdpolhj: 20px;">
 							<a rel="nofollow" target="_blank" href="http://url.kokvod.com/ymurl"><img src="http://url.kokvod.com/z" width="240" /></a>
 						</div>-->
 						<!-- end 广告  -->
@@ -92,16 +102,16 @@ $(document).ready(function() {
 			<!-- end 详细信息 -->
 			
 			<!-- 播放列表  -->
-			<div class="stui-pannel clearfix" id="playlist">	
-				<div class="stui-pannel__head clearfix">
-					<span class="text-muted pull-right hidden-xs">如果遇到不能播放建议尝试切换线路哦！</span>
-					<h3 class="title">
-						<i class="iconfont icon-link"></i> <span class="active-tab">播放地址</span>
+			<div class="cx_qxoapjxq cx_xzwoevcx" id="playlist">	
+				<div class="cx_bohtsjby cx_xzwoevcx">
+					<span class="cx_fgpemvqq cx_ahtwgegs cx_jhjquqyl">如果遇到不能播放建议尝试切换线路哦！</span>
+					<h3 class="cx_bbxkoftw">
+						<i class="iconfont icon-link"></i> <span class="active-cx_ifznnxfs">播放地址</span>
 					</h3>
-					<ul class="tab">										
-						<li class="dropdown">
-							<a href="javascript:;" class="text-red" data-toggle="dropdown">切换线路 <i class="iconfont icon-moreunfold"></i></a>
-							<ul class="dropdown-menu">
+					<ul class="cx_ifznnxfs">										
+						<li class="cx_xqfojqyl">
+							<a href="javascript:;" class="cx_jwtknida" cx_qesffrss-toggle="cx_xqfojqyl">切换线路 <i class="iconfont icon-moreunfold"></i></a>
+							<ul class="cx_iexyzspp">
 								{maccms:foreach name="obj.vod_play_list" id="vo"}	
 								<li><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}	</a></li>
 								{/maccms:foreach}
@@ -109,16 +119,16 @@ $(document).ready(function() {
 						</li>	
 					</ul>
 				</div>																			
-				<div class="tab-content stui-pannel_bd">
+				<div class="cx_iecicdtl stui-pannel_bd">
 					{maccms:foreach name="obj.vod_play_list" id="vo"}	
-					<div id="playlist{$key}" class="tab-pane fade in {if condition="$key eq 1"}active{/if} clearfix">
-						<ul class="stui-content__playlist playlink clearfix">
+					<div id="playlist{$key}" class="cx_zpiowxdj fade in {if condition="$key eq 1"}active{/if} cx_xzwoevcx">
+						<ul class="cx_waqdyouo playlink cx_xzwoevcx">
 							{maccms:foreach name="vo.urls" id="vo2"}						
 			                <li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
 			                {/maccms:foreach}
 						</ul>
 						<!--
-						<p class="stui-content__intro">
+						<p class="cx_hdfuxich">
 							{$vo.player_info.tip}
 						</p>
 						-->
@@ -129,14 +139,14 @@ $(document).ready(function() {
 			<!-- end 播放列表  -->
 			
 			<!-- 剧情介绍 -->
-			<div class="stui-pannel clearfix" id="desc">
-				<div class="stui-pannel__head clearfix">
-					<span class="text-muted pull-right">更新时间：{$obj.vod_time|date='Y-m-d',###}</span>
-					<h3 class="title">
+			<div class="cx_qxoapjxq cx_xzwoevcx" id="cx_zlffnhem">
+				<div class="cx_bohtsjby cx_xzwoevcx">
+					<span class="cx_fgpemvqq cx_ahtwgegs">更新时间：{$obj.vod_time|date='Y-m-d',###}</span>
+					<h3 class="cx_bbxkoftw">
 						<i class="iconfont icon-form"></i> 剧情介绍
 					</h3>						
 				</div>																		
-				<div class="stui-content__desc col-pd clearfix">
+				<div class="cx_lumtsjuf cx_zuvcilnm cx_xzwoevcx">
 				    <p> 关键词：{$obj.vod_tag|mac_url_create='tag','vod','search'}</p>
 					ES影院推荐的{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}{:get_keywords($obj.vod_id)}{else}{$obj.vod_name}{/if}在线观看免费播放地址由网友上传至ES影院，这是一部由{$obj.vod_actor}领衔主演，本片上映于{$obj.vod_year}年的{$obj.vod_area}，导演是{$obj.vod_director}，语言是{$obj.vod_lang}，在各大影评网站{$obj.vod_name}得到了 {$obj.vod_score}的评分。{$obj.vod_name}剧情介绍：{$obj.vod_content|mac_filter_html}。<p></p>(《{$obj.vod_name}》  {$obj.vod_class}剧于{$obj.vod_time_add|mac_day}由<a href="http://www.zych100.com" title="ES影院">ES影院</a>收集自其他网站发布。)
 	</div>
@@ -149,25 +159,25 @@ $(document).ready(function() {
 			{include file="duanping"}
 
 			<!-- 猜你喜欢 -->
-			<div id="Carousel-2" class="stui-pannel carousel clearfix">					
-				<div class="stui-pannel__head clearfix">
-					<a class="more text-muted pull-right" href="#Carousel-2" data-slide="next"><i class="icon iconfont icon-refresh"></i> 换一换</a>
-					<h3 class="title">
+			<div id="Carousel-2" class="cx_qxoapjxq carousel cx_xzwoevcx">					
+				<div class="cx_bohtsjby cx_xzwoevcx">
+					<a class="cx_abhldvdy cx_fgpemvqq cx_ahtwgegs" href="#Carousel-2" cx_qesffrss-slide="cx_upapeugr"><i class="icon iconfont icon-refresh"></i> 换一换</a>
+					<h3 class="cx_bbxkoftw">
 						<i class="iconfont icon-favorites"></i> 猜你喜欢
 					</h3>						
 				</div>
-				<div class="stui-pannel_bd carousel-inner">
-					<ul class="stui-vodlist item active clearfix">
+				<div class="stui-pannel_bd cx_eyfqdjwx">
+					<ul class="stui-vodlist cx_lvqqvehn active cx_xzwoevcx">
 						{maccms:vod num="12" type="6" order="desc" by="time"}
 						{include file="block/vod_box2"}		
 						{/maccms:vod}
 					</ul>
-					<ul class="stui-vodlist item clearfix">
+					<ul class="stui-vodlist cx_lvqqvehn cx_xzwoevcx">
 						{maccms:vod num="12" type="current" order="desc" by="hits"}
 						{include file="block/vod_box2"}		
 						{/maccms:vod}
 					</ul>
-					<ul class="stui-vodlist item clearfix">
+					<ul class="stui-vodlist cx_lvqqvehn cx_xzwoevcx">
 						{maccms:vod num="12" ids="'.$obj['vod_rel_vod'].'" order="desc" by="time"}
 						{include file="block/vod_box2"}		
 						{/maccms:vod}
