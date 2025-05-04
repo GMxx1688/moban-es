@@ -1,7 +1,11 @@
 <li class="stui-vodlist__item">
-	<a class="stui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
-		<span class="play hidden-xs"></span>		
-		<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
-	</a>									
-	<h4 class="stui-vodlist__title"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>		
+    <a class="stui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{$vo.vod_pic}" loading="lazy" alt="{$vo.vod_name} - {$vo.type.type_name}">						
+        <span class="play hidden-xs"></span>
+        <span class="pic-tag pic-tag-top" style="background-color: #5bb7fe;">{$vo.vod_version}</span>
+        <span class="pic-text text-right">{$vo.vod_remarks|mac_default='更新中'}</span>
+    </a>									
+    <div class="stui-vodlist__detail">
+        <h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+        <p class="text text-overflow text-muted hidden-xs">主演：{$vo.vod_actor|mac_default='未知'}</p>
+    </div>
 </li>

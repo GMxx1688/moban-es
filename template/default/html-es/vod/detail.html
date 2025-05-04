@@ -3,180 +3,131 @@
 <head>
     {include file="seo/vod_detail"}   
 	{include file="block/include"}
-	  <script>
-$(document).ready(function() {
-    var movieId = '{$obj.vod_id}';
-    var movieName = '{$obj.vod_name}';
-    var movieContent = '{$obj.vod_content|mac_filter_html}';
-
-    
-    console.log('Movie ID:', movieId);
-    console.log('Movie Name:', movieName);
-    console.log('Movie Content:', movieContent);
-
-    $.ajax({
-        url: '/duanping/duanping.php', 
-        type: 'POST',
-        data: {
-            movie_id: movieId,
-            movie_name: movieName,
-            movie_content: movieContent
-        },
-        success: function(response) {
-           
-        },
-        error: function(xhr, status, error) {
-        
-        }
-    });
-});
-</script>
-
 </head>
-<body>	
+<body>
+	
     <div class="container">
-        <div class="row">   
+        <div class="row">
         	{include file="block/head"}
-        	
-        	<!-- 详细信息 -->
-			<div class="stui-pannel clearfix">
-				<div class="stui-content col-pd clearfix">
-					<div class="stui-content__thumb">											
-						<a class="pic" href="{$obj.vod_playlink}" title="{$obj.vod_name}">
-							<img class="img-responsive lazyload" data-original="{:mac_url_img($obj.vod_pic)}" src="{$maccms.path}statics/img/load.gif"/>
-							<span class="pic-text">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
-						</a>										
-					</div>
-					<div class="stui-content__detail">
-						<h3 class="title">{$obj.vod_name}<span class="score text-red">{$obj.vod_score}</span></h3>	
-						<p class="data">
-							<span class="text-muted hidden-xs">类型：</span>{$obj.vod_class}
-							<span class="split-line"></span>
-							<span class="text-muted hidden-xs">地区：</span>{$obj.vod_area}
-							<span class="split-line"></span>
-							<span class="text-muted hidden-xs">年份：</span>{$obj.vod_year}		
-						</p>
-						{if condition="$obj.vod_actor eq null or $obj.vod_actor eq '未知' or $obj.vod_actor eq '内详'"}{else}
-						<p class="data"><span>主演：</span>{$obj.vod_actor|mac_substring=40}</p>{/if}
-						{if condition="$obj.vod_director eq null or $obj.vod_director eq '未知' or $obj.vod_director eq '内详'"}{else}
-						<p class="data"><span>导演：</span>{$obj.vod_director}</p>{/if}
-						<p class="desc hidden-xs">
-							<span class="left text-muted">简介：</span>ES影院推荐好看的{$obj.vod_area}剧{$obj.vod_name}在线观看免费播放地址{$obj.vod_content|mac_filter_html|mac_substring=55} <a href="#desc">详细 &gt;</a>
-						</p>							    
-						<div class="playbtn">
-									{notempty name="obj.vod_play_list"}
-{php}$count=1;{/php}
-{maccms:foreach name="obj.vod_play_list" key="play"}
-{if $count==1}
-<a class="active" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid])}">立即播放</a>
-{/if}{php}$count++;{/php}
-{/maccms:foreach}
-{/notempty}
-							
-							
-							
-							<span class="bdsharebuttonbox hidden-xs">
-								<a rel="nofollow" class="bds_more" data-cmd="more" href="" style="float: none; background: #f5f5f5; margin: 0; padding: 0; vertical-align: -2px;">分享 <i class="iconfont icon-share"></i></a>
-							</span>	
-						</div>
-					</div>	
-					<div class="stui-content__ad hidden-sm hidden-xs">
-						<!-- 广告  -->
-						<!--<div class="clearfix" style="padding-left: 20px;">
-							<a rel="nofollow" target="_blank" href="http://url.kokvod.com/ymurl"><img src="http://url.kokvod.com/z" width="240" /></a>
-						</div>-->
-						<!-- end 广告  -->
-					</div>
-				</div>				
-			</div>
-			<!-- end 详细信息 -->
-			
-			<!-- 播放列表  -->
-			<div class="stui-pannel clearfix" id="playlist">	
-				<div class="stui-pannel__head clearfix">
-					<span class="text-muted pull-right hidden-xs">如果遇到不能播放建议尝试切换线路哦！</span>
-					<h3 class="title">
-						<i class="iconfont icon-link"></i> <span class="active-tab">播放地址</span>
-					</h3>
-					<ul class="tab">										
-						<li class="dropdown">
-							<a href="javascript:;" class="text-red" data-toggle="dropdown">切换线路 <i class="iconfont icon-moreunfold"></i></a>
-							<ul class="dropdown-menu">
-								{maccms:foreach name="obj.vod_play_list" id="vo"}	
-								<li><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}	</a></li>
-								{/maccms:foreach}
-							</ul>
-						</li>	
-					</ul>
-				</div>																			
-				<div class="tab-content stui-pannel_bd">
-					{maccms:foreach name="obj.vod_play_list" id="vo"}	
-					<div id="playlist{$key}" class="tab-pane fade in {if condition="$key eq 1"}active{/if} clearfix">
-						<ul class="stui-content__playlist playlink clearfix">
-							{maccms:foreach name="vo.urls" id="vo2"}						
-			                <li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
-			                {/maccms:foreach}
-						</ul>
-						<!--
-						<p class="stui-content__intro">
-							{$vo.player_info.tip}
-						</p>
-						-->
-					</div>															
-					{/maccms:foreach}
-				</div>
-			</div>		
-			<!-- end 播放列表  -->
-			
-			<!-- 剧情介绍 -->
-			<div class="stui-pannel clearfix" id="desc">
-				<div class="stui-pannel__head clearfix">
-					<span class="text-muted pull-right">更新时间：{$obj.vod_time|date='Y-m-d',###}</span>
-					<h3 class="title">
-						<i class="iconfont icon-form"></i> 剧情介绍
-					</h3>						
-				</div>																		
-				<div class="stui-content__desc col-pd clearfix">
-				    <p> 关键词：{$obj.vod_tag|mac_url_create='tag','vod','search'}</p>
-					ES影院推荐的{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}{:get_keywords($obj.vod_id)}{else}{$obj.vod_name}{/if}在线观看免费播放地址由网友上传至ES影院，这是一部由{$obj.vod_actor}领衔主演，本片上映于{$obj.vod_year}年的{$obj.vod_area}，导演是{$obj.vod_director}，语言是{$obj.vod_lang}，在各大影评网站{$obj.vod_name}得到了 {$obj.vod_score}的评分。{$obj.vod_name}剧情介绍：{$obj.vod_content|mac_filter_html}。<p></p>(《{$obj.vod_name}》  {$obj.vod_class}剧于{$obj.vod_time_add|mac_day}由<a href="http://www.zych100.com" title="ES影院">ES影院</a>收集自其他网站发布。)
-	</div>
-					
-					
-				</div>				
-			</div>
-    
-			<!-- end 剧情介绍 -->
-			{include file="duanping"}
-
-			<!-- 猜你喜欢 -->
-			<div id="Carousel-2" class="stui-pannel carousel clearfix">					
-				<div class="stui-pannel__head clearfix">
-					<a class="more text-muted pull-right" href="#Carousel-2" data-slide="next"><i class="icon iconfont icon-refresh"></i> 换一换</a>
-					<h3 class="title">
-						<i class="iconfont icon-favorites"></i> 猜你喜欢
-					</h3>						
-				</div>
-				<div class="stui-pannel_bd carousel-inner">
-					<ul class="stui-vodlist item active clearfix">
-						{maccms:vod num="12" type="6" order="desc" by="time"}
-						{include file="block/vod_box2"}		
-						{/maccms:vod}
-					</ul>
-					<ul class="stui-vodlist item clearfix">
-						{maccms:vod num="12" type="current" order="desc" by="hits"}
-						{include file="block/vod_box2"}		
-						{/maccms:vod}
-					</ul>
-					<ul class="stui-vodlist item clearfix">
-						{maccms:vod num="12" ids="'.$obj['vod_rel_vod'].'" order="desc" by="time"}
-						{include file="block/vod_box2"}		
-						{/maccms:vod}
-					</ul>
-				</div>
-			</div>
-			<!-- end 猜你喜欢 -->
-			<div class="text" style=" text-align:center;"> 若ES影院收录的节目无意侵犯了贵司版权<br>请在留言处留言 我们会在3日内删除侵权内容，谢谢。</div>
+            
+            <!-- 面包屑导航 -->
+            {include file="block/breadcrumb"}
+            
+            <div class="stui-pannel clearfix">
+            	<div class="stui-pannel-box clearfix">
+            		<div class="col-md-wide-75 col-xs-1">
+            			<div class="stui-pannel clearfix">
+            				<div class="stui-pannel-box clearfix">
+            					<div class="stui-content col-pd clearfix">
+            						<div class="stui-player col-pd clearfix">
+            							<div class="stui-player__detail detail">
+            								<h1 class="title">{$obj.vod_name}</h1>
+            								<p class="data margin-0">
+            									<span class="text-muted">类型：</span>{$obj.type.type_name}
+            									<span class="split-line"></span>
+            									<span class="text-muted">地区：</span>{$obj.vod_area}
+            									<span class="split-line"></span>
+            									<span class="text-muted">年份：</span>{$obj.vod_year}
+            								</p>
+            								<p class="data">
+            									<span class="text-muted">主演：</span>{$obj.vod_actor}
+            								</p>
+            								<p class="data">
+            									<span class="text-muted">导演：</span>{$obj.vod_director}
+            								</p>
+            								<p class="desc margin-0 hidden-xs">
+            									<span class="left text-muted">简介：</span>{$obj.vod_content|mac_filter_html|mac_url_create}
+            								</p>
+            							</div>
+            							<div class="stui-player__thumb">
+            								<a class="stui-vodlist__thumb picture v-thumb" href="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}" title="{$obj.vod_name}" style="background: url({$obj.vod_pic}) no-repeat; background-position:50% 50%; background-size: cover;" loading="lazy" alt="{$obj.vod_name} - {$obj.type.type_name}">
+            									<span class="play hidden-xs"></span>
+            									<span class="pic-text text-right">观看</span>
+            								</a>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            			</div>
+            			<!-- 播放地址 -->
+            			<div class="stui-pannel clearfix">
+            				<div class="stui-pannel-box clearfix">
+            					<div class="stui-pannel__head clearfix">
+            						<span class="more text-muted pull-right hidden-xs">无需安装任何插件，即可快速播放</span>
+            						<h3 class="title">
+            							播放地址
+            						</h3>
+            					</div>
+            					<div class="stui-pannel_bd col-pd clearfix">
+            						<ul class="stui-content__playlist column10 clearfix">
+            							{maccms:foreach name="obj.vod_play_list" id="vo"}
+            							{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+            							<li><a href="{:mac_url_vod_play($obj,['sid'=>$key+1,'nid'=>$key2])}" class="btn btn-play-source {if condition="$param.sid eq ($key+1) && $param.nid eq $key2"}btn-default{else}btn-default{/if}">{$vo2.name}</a></li>
+            							{/maccms:foreach}
+            							{/maccms:foreach}
+            						</ul>
+            					</div>
+            				</div>
+            			</div>
+            			<!-- end 播放地址 -->
+            			
+            			<!-- 猜你喜欢 -->
+            			<div class="stui-pannel clearfix">
+            				<div class="stui-pannel-box clearfix">
+            					<div class="stui-pannel__head clearfix">
+            						<h3 class="title">
+            							猜你喜欢
+            						</h3>
+            					</div>
+            					<div class="stui-pannel_bd clearfix">
+            						<ul class="stui-vodlist__bd clearfix">
+            							{maccms:vod num="6" type="current" level="3" order="desc" by="hits"}
+            							{include file="block/vod_box"}
+            							{/maccms:vod}
+            						</ul>
+            					</div>
+            				</div>
+            			</div>
+            			<!-- end 猜你喜欢 -->
+            		</div>
+            		<div class="col-md-wide-25 hidden-sm hidden-xs">
+            			<div class="stui-pannel clearfix">
+            				<div class="stui-pannel-box clearfix">
+            					<div class="stui-pannel__head clearfix">
+            						<h3 class="title">
+            							热播榜
+            						</h3>
+            					</div>
+            					<div class="stui-pannel_bd clearfix">
+            						<ul class="stui-vodlist__text active col-pd clearfix">
+            							{maccms:vod num="10" type="current" order="desc" by="hits"}
+            							<li class="col-xs-1 padding-0"><a class="text-overflow" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><span class="am-badge am-round pull-left">{$key}</span><span class="text-muted pull-right">{$vo.vod_hits|mac_data_count}</span><em class="text-red"></em>&nbsp;{$vo.vod_name}</a></li>
+            							{/maccms:vod}
+            						</ul>
+            					</div>
+            				</div>
+            			</div>
+            			<div class="stui-pannel clearfix">
+            				<div class="stui-pannel-box clearfix">
+            					<div class="stui-pannel__head clearfix">
+            						<h3 class="title">
+            							最新
+            						</h3>
+            					</div>
+            					<div class="stui-pannel_bd clearfix">
+            						<ul class="stui-vodlist__text active col-pd clearfix">
+            							{maccms:vod num="10" type="current" order="desc" by="time"}
+            							<li class="col-xs-1 padding-0"><a class="text-overflow" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><span class="am-badge am-round pull-left">{$key}</span><span class="text-muted pull-right">{$vo.vod_time|date='m-d',###}</span><em class="text-red"></em>&nbsp;{$vo.vod_name}</a></li>
+            							{/maccms:vod}
+            						</ul>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>
         </div>
+    </div>
 	{include file="block/foot"}
 </body>
 </html>
