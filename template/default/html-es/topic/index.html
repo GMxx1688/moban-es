@@ -6,19 +6,29 @@
 	</head>
 	<body>
 		
-		<div class="container">
-			<div class="row">
+		<div class="cx_fnncqktw">
+			<div class="cx_vcrabmay">
 				{include file="block/head"}
+
+<div class="cx_breadcrumb">
+    <div class="container">
+        <ul class="cx_breadcrumb__list">
+            <li class="cx_breadcrumb__item"><a href="{$maccms.path}">首页</a></li>
+            <li class="cx_breadcrumb__item">专题</li>
+        </ul>
+    </div>
+</div>
+
 								
-				<div class="stui-pannel clearfix">
+				<div class="cx_qxoapjxq cx_xzwoevcx">
 					<!-- 列表 -->
-					<ul class="stui-vodlist clearfix">								
+					<ul class="stui-vodlist cx_xzwoevcx">								
 						{maccms:topic num="12" paging="yes" order="desc" by="time"}
-						<li class="stui-vodlist__item active">
-							<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{$vo.topic_pic}" style=" padding-top: 50%;" >						
-								<span class="pic-text">—— 收录{$vo.topic_rel_vod|explode=',',###|count}个影片 ——</span>								
+						<li class="cx_rokswbzo active">
+							<a class="cx_hobnutpv active lazyload" href="{:mac_url_topic_detail($vo)}" cx_bbxkoftw="{$vo.topic_name}" cx_qesffrss-original="{$vo.topic_pic}" style=" padding-cx_nktazzdp: 50%;" >						
+								<span class="cx_fderntdm">—— 收录{$vo.topic_rel_vod|explode=',',###|count}个影片 ——</span>								
 							</a>
-							<h4 class="stui-vodlist__title text-center"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+							<h4 class="cx_opvcqwmp cx_qdqtkctd"><a href="{:mac_url_topic_detail($vo)}" cx_bbxkoftw="{$vo.topic_name}">{$vo.topic_name}</a></h4>
 									
 						</li>
 						 {/maccms:topic}

@@ -6,15 +6,15 @@
 </head>
 <body>
 	
-    <div class="container">
-        <div class="row">
+    <div class="cx_fnncqktw">
+        <div class="cx_vcrabmay">
         	{include file="block/head"}
         	
-            <div class="stui-pannel clearfix">
+            <div class="cx_qxoapjxq cx_xzwoevcx">
 				<!-- 筛选 -->
-				<ul class="stui-screen__list top type-slide clearfix">
+				<ul class="cx_yrsuywei cx_nktazzdp type-slide cx_xzwoevcx">
 					<li>
-						<span class="text-muted">按类型</span>
+						<span class="cx_fgpemvqq">按类型</span>
 					</li>
 					<li {if condition="$param['class'] eq ''"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>'','order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
 	                {empty name="$obj.type_extend.area"}
@@ -27,9 +27,9 @@
 	                {/maccms:foreach}
 	                {/empty}							
 				</ul>
-				<ul class="stui-screen__list type-slide clearfix">
+				<ul class="cx_yrsuywei type-slide cx_xzwoevcx">
 					<li>
-						<span class="text-muted">按地区</span>
+						<span class="cx_fgpemvqq">按地区</span>
 					</li>
 					<li {if condition="$param['area'] eq ''"} class="active" {/if}><a href="{:mac_url_type($obj,['area'=>'','lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
 	                {empty name="$obj.type_extend.area"}
@@ -42,9 +42,9 @@
 	                    {/maccms:foreach}
 	                {/empty}
 				</ul>
-				<ul class="stui-screen__list type-slide typeno clearfix">
+				<ul class="cx_yrsuywei type-slide typeno cx_xzwoevcx">
 					<li>
-						<span class="text-muted">按年份</span>
+						<span class="cx_fgpemvqq">按年份</span>
 					</li>
 					<li {if condition="$param['year'] eq ''"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>'','level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
 	                {empty name="$obj.type_extend.year"}
@@ -57,10 +57,10 @@
 	                    {/maccms:foreach}
 	                {/empty}							
 				</ul>
-				<div class="screen-hide">
-					<ul class="stui-screen__list type-slide clearfix">
+				<div class="cx_zgpchvkw">
+					<ul class="cx_yrsuywei type-slide cx_xzwoevcx">
 						<li>
-							<span class="text-muted">按语言</span>
+							<span class="cx_fgpemvqq">按语言</span>
 						</li>
 						<li {if condition="$param['lang'] eq ''"} class="active" {/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>'','year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
 		                {empty name="$obj.type_extend.lang"}
@@ -73,9 +73,9 @@
 		                    {/maccms:foreach}
 		                {/empty}							
 					</ul>				
-					<ul class="stui-screen__list letter-list type-slide clearfix">
+					<ul class="cx_yrsuywei cx_ahylbuys type-slide cx_xzwoevcx">
 						<li>
-							<span class="text-muted">按字母</span>
+							<span class="cx_fgpemvqq">按字母</span>
 						</li>
 						<li {if condition="$param['letter'] eq ''"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>'','state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
 		                {maccms:foreach name=":explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9')" id="vo2" key="key2"}
@@ -83,21 +83,21 @@
 		                {/maccms:foreach}							
 					</ul>
 				</div>
-				<div class="stui-screen__ft">
-					<a href="javascript:;" class="screen-open"><i class="iconfont icon-add"></i> 更多选项</a>
+				<div class="cx_xxqohiyj">
+					<a href="javascript:;" class="screen-cx_xqygrgso"><i class="iconfont icon-add"></i> 更多选项</a>
 				</div>	
 				<!-- end 筛选 -->
 				
 				<!-- nav -->
-				<ul class="stui-pannel__nav clearfix">
+				<ul class="cx_csbabxth cx_xzwoevcx">
 					<li {if condition="$param.by eq '' || $param.by eq 'time'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}">按时间</a></li>
 			        <li {if condition="$param.by eq 'hits'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}">按人气</a></li>
-			        <li {if condition="$param.by eq 'score'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}">按评分</a></li>					
+			        <li {if condition="$param.by eq 'score'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'cx_ahhqwqpf' ],'show')}">按评分</a></li>					
 				</ul>
 				<!-- end nav -->
 				
 				<!-- 列表 -->
-				<ul class="stui-vodlist clearfix">
+				<ul class="stui-vodlist cx_xzwoevcx">
 					{maccms:vod num="36" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
 					{include file="block/vod_box"}
 					{/maccms:vod}	 

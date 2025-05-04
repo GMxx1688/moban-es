@@ -66,8 +66,8 @@ var stui = {
 		'mshare': function() {
 			$(".open-share").click(function() {
 				stui.browser.useragent.weixin ? $("body").append('<div class="mobile-share share-weixin"></div>') : $("body").append('<div class="mobile-share share-other"></div>');
-				$(".mobile-share").click(function() {
-					$(".mobile-share").remove();
+				$(".cx_rijnjmku").click(function() {
+					$(".cx_rijnjmku").remove();
 					$("body").removeClass("modal-open")
 				})
 			})

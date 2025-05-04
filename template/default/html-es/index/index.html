@@ -6,16 +6,16 @@
 </head>
 <body>
 	
-    <div class="container">
-        <div class="row">
+    <div class="cx_fnncqktw">
+        <div class="cx_vcrabmay">
         	{include file="block/head"}        	
         	<!-- 幻灯  -->
-			<div class="stui-pannel clearfix">
-				<div class="flickity carousel_center clearfix">
+			<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_vcltzpvx carousel_center cx_xzwoevcx">
 					{maccms:vod num="3" paging="no" type="all" order="asc" by="time" level="9"}
-			    	<div class="flickity-item">
-						<a href="{:mac_url_vod_detail($vo)}" class="stui-vodlist__thumb" title="{$vo.vod_name}" style="background: url({$vo.vod_pic_slide}) no-repeat; background-position:50% 50%; background-size: cover; padding-top: 45%;">
-							<span class="title">{$vo.vod_name}</span>
+			    	<div class="cx_vcltzpvx-cx_lvqqvehn">
+						<a href="{:mac_url_vod_detail($vo)}" class="cx_hobnutpv" cx_bbxkoftw="{$vo.vod_name}" style="background: url({$vo.vod_pic_slide}) no-repeat; background-position:50% 50%; background-size: cover; padding-cx_nktazzdp: 45%;">
+							<span class="cx_bbxkoftw">{$vo.vod_name}</span>
 						</a>	            					
 					</div>	
 					{/maccms:vod}	
@@ -24,20 +24,20 @@
 			<!-- end 幻灯  -->
 		<div class="text" style=" text-align:center;"> 欢迎来到ES影院，本站唯一网址是：{$maccms.site_url}</div>
 			<!-- 热播  -->
-			<div class="stui-pannel clearfix">
-				<div class="stui-pannel__head clearfix">
-					<h3 class="title hidden-xs">
+			<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_bohtsjby cx_xzwoevcx">
+					<h3 class="cx_bbxkoftw cx_jhjquqyl">
 						<i class="iconfont icon-hot"></i> 最近热播
 					</h3>						
-					<ul class="tabs">
+					<ul class="cx_jxxlcsms">
 						{maccms:type ids="1,2,3,4,5" order="asc" by="sort" id="vo1" key="key1"}
-						<li {if condition="$vo1.type_id eq 1"}class="active"{/if}><a href="#home{$key}" data-toggle="tab">{$vo1.type_name}</a></li>
+						<li {if condition="$vo1.type_id eq 1"}class="active"{/if}><a href="#home{$key}" cx_qesffrss-toggle="cx_ifznnxfs">{$vo1.type_name}</a></li>
 						{/maccms:type}								
 					</ul>
 				</div>																		
-				<div class="tab-content">
+				<div class="cx_iecicdtl">
 					{maccms:type ids="1,2,3,4,5" order="asc" by="sort" id="vo1" key="key1"}
-					<ul id="home{$key}" class="stui-vodlist tab-pane fade in {if condition="$vo1.type_id eq 1"}active{/if} clearfix">
+					<ul id="home{$key}" class="stui-vodlist cx_zpiowxdj fade in {if condition="$vo1.type_id eq 1"}active{/if} cx_xzwoevcx">
 						{maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="hits"}						
 						{include file="block/vod_box"}																		
 						{/maccms:vod}						
@@ -49,21 +49,21 @@
 			
 			<!-- 列表 -->
 			{maccms:type ids="1,2,3,4,5" order="asc" by="sort" id="vo1" key="key1"}
-			<div class="stui-pannel clearfix">
-				<div class="stui-pannel__head clearfix">
-					<a class="text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="iconfont icon-more"></i></a>
-					<span class="hidden-sm hidden-xs pull-right">
+			<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_bohtsjby cx_xzwoevcx">
+					<a class="cx_fgpemvqq cx_ahtwgegs" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="iconfont icon-cx_abhldvdy"></i></a>
+					<span class="cx_cxrmyylz cx_jhjquqyl cx_ahtwgegs">
 						{maccms:type parent="'.$vo1['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
 						{if condition="$key lt 11"}
-                        <a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a> <span class="split-line"></span>
+                        <a href="{:mac_url_type($vo2,[],'show')}" class="cx_fgpemvqq">{$vo2.type_name}</a> <span class="cx_zyjcljfv"></span>
                         {/if}
                         {/maccms:type}						
 					</span>
-					<h3 class="title">
+					<h3 class="cx_bbxkoftw">
 						<i class="iconfont icon-viewgallery"></i> 最新{$vo1.type_name}
 					</h3>								
 				</div>
-				<ul class="stui-vodlist clearfix">
+				<ul class="stui-vodlist cx_xzwoevcx">
 					{maccms:vod num="6" type="'.$vo1['type_id'].'" order="desc" by="time"}						
 					{include file="block/vod_box"}																		
 					{/maccms:vod}	
@@ -73,15 +73,15 @@
 			<!-- end 列表 -->
 			
 			<!-- 友链 -->
-			<div class="stui-pannel clearfix">				
-				<div class="stui-pannel__head clearfix">                                                                                                                                                                                                                                                       
-					<h3 class="title">								
+			<div class="cx_qxoapjxq cx_xzwoevcx">				
+				<div class="cx_bohtsjby cx_xzwoevcx">                                                                                                                                                                                                                                                       
+					<h3 class="cx_bbxkoftw">								
 						友情链接
 					</h3>								
 				</div>																		
-				<ul class="stui-link__text col-pd clearfix">
+				<ul class="cx_donexjyp cx_zuvcilnm cx_xzwoevcx">
 					{maccms:link num="30" type="font"}
-					<li><a class="text-muted" href="{$vo.link_url}" title="{$vo.link_name}" target="_blank">{$vo.link_name}</a></li>	
+					<li><a class="cx_fgpemvqq" href="{$vo.link_url}" cx_bbxkoftw="{$vo.link_name}" target="_blank">{$vo.link_name}</a></li>	
 
 					
 					
@@ -93,10 +93,10 @@
 			<!-- end 友链 -->
 			
 			<!-- 广告  -->
-		<!--	<div class="stui-pannel clearfix">
-				<div class="col-pd">
-					<a class="hidden-xs" target="_blank" href="http://v.shoutu.cn/"> <img class="img-responsive" src="http://v.shoutu.cn/html/video/img/ad1.png"/></a>
-					<a class="visible-xs" target="_blank" href="http://v.shoutu.cn/"> <img class="img-responsive" src="http://v.shoutu.cn/html/video/img/ad2.png"/> </a>
+		<!--	<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_zuvcilnm">
+					<a class="cx_jhjquqyl" target="_blank" href="http://v.cx_mwshlgmq.cx_xxyrdliy/"> <img class="cx_gpstvscg" src="http://v.cx_mwshlgmq.cx_xxyrdliy/html/video/img/ad1.cx_tnirtdlu"/></a>
+					<a class="cx_uhslzpet" target="_blank" href="http://v.cx_mwshlgmq.cx_xxyrdliy/"> <img class="cx_gpstvscg" src="http://v.cx_mwshlgmq.cx_xxyrdliy/html/video/img/ad2.cx_tnirtdlu"/> </a>
 				</div>	
 			</div>-->
 			<!-- end 广告  -->

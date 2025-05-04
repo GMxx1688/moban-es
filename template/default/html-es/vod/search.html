@@ -6,19 +6,29 @@
 </head>
 <body>
 	
-    <div class="container">
-        <div class="row">       	
+    <div class="cx_fnncqktw">
+        <div class="cx_vcrabmay">       	
         	{include file="block/head"}
+
+<div class="cx_breadcrumb">
+    <div class="container">
+        <ul class="cx_breadcrumb__list">
+            <li class="cx_breadcrumb__item"><a href="{$maccms.path}">首页</a></li>
+            <li class="cx_breadcrumb__item">搜索 "{$param.wd}"</li>
+        </ul>
+    </div>
+</div>
+
         	
-        	<div class="stui-pannel clearfix">
-				<div class="stui-pannel__head clearfix">	
-					<h3 class="title">									
+        	<div class="cx_qxoapjxq cx_xzwoevcx">
+				<div class="cx_bohtsjby cx_xzwoevcx">	
+					<h3 class="cx_bbxkoftw">									
 						与“{$param.wd}”相关的影片
 					</h3>
 				</div>	
 				
 				<!-- 列表 -->	
-				<ul class="stui-vodlist clearfix">										
+				<ul class="stui-vodlist cx_xzwoevcx">										
 					{maccms:vod num="36" paging="yes" pageurl="vod/search" order="desc" by="time"}						
 					{include file="block/vod_box"}					
 					{/maccms:vod}
