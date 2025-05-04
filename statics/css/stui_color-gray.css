@@ -12,24 +12,24 @@ a:focus,a:hover,a:active {
 }
 
 
-.xsjduqdl .more,.xsjduqdl .more a {
+.stui-header__menu-nav .more,.stui-header__menu-nav .more a {
 	color: #999;
 }
 
-.xsjduqdl li a {
+.stui-header__menu-nav li a {
 	color: #fff;
 }
 
-.xsjduqdl li.active a,.xsjduqdl li a:hover {
+.stui-header__menu-nav li.active a,.stui-header__menu-nav li a:hover {
 	background-color: #252525;
 	color: #fff;
 }
 
-.xsjduqdl,.isdobvbg li.active a,.yjxpqixs li.active a,.mixlvnbp .playbtn a.active,.vfdpxgdu li.active a,.vfdpxgdu li.active .num,.vfdpxgdu li.disabled a,.nieofsig li.active a,.bdaeezmy li.active a,.mkogvqeh li .submit,.daofrbls .tabs li.active a,.daofrbls .tabs li.active a:before,.nieofsig li.active a:before,.fludvveo a,.vfdpxgdu-text span.pagenow {
+.stui-header__menu-nav,.stui-content__playlist li.active a,.stui-screen li.active a,.stui-content__detail .playbtn a.active,.stui-page li.active a,.stui-page li.active .num,.stui-page li.disabled a,.stui-pannel__nav li.active a,.bdaeezmy li.active a,.mkogvqeh li .submit,.stui-pannel__head .tabs li.active a,.stui-pannel__head .tabs li.active a:before,.stui-pannel__nav li.active a:before,.stui-share a,.stui-page-text span.pagenow {
 	background-color: #333;
 	color: #fff;
 }
 
-.isdobvbg li.active a,.vfdpxgdu li.active a,.vfdpxgdu li.active .num,.vfdpxgdu li.disabled a,.mixlvnbp .playbtn a.active,.nieofsig li.active a,.bdaeezmy li.active a,.daofrbls .tabs li.active a,.vfdpxgdu-text span.pagenow {
+.stui-content__playlist li.active a,.stui-page li.active a,.stui-page li.active .num,.stui-page li.disabled a,.stui-content__detail .playbtn a.active,.stui-pannel__nav li.active a,.bdaeezmy li.active a,.stui-pannel__head .tabs li.active a,.stui-page-text span.pagenow {
 	border: 1px solid #333;
 }
