@@ -1,0 +1,25 @@
+<nav class="stui-breadcrumb">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="{$maccms.path}">
+                <span itemprop="name">首页</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        {if condition="$obj.type_id"}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="{:mac_url_type($obj.type,[],\'show\')}">
+                <span itemprop="name">{$obj.type.type_name}</span>
+            </a>
+            <meta itemprop="position" content="2" />
+        </li>
+        {/if}
+        {if condition="$obj.vod_name"}
+        <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{$obj.vod_name}</span>
+            <meta itemprop="position" content="3" />
+        </li>
+        {/if}
+    </ol>
+</nav>
+
