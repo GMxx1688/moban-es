@@ -12,12 +12,12 @@
         <div class="row">
         	{include file="block/head"}  	       	
 			<!-- 播放器  -->
-			<div class="stui-pannel clearfix">																
+			<div class="thyzqiak clearfix">																
 				<div class="stui-player col-pd">
-					<div class="stui-player__video embed-responsive embed-responsive-16by9 clearfix">
+					<div class="wcafqngg embed-responsive embed-responsive-16by9 clearfix">
 						{$player_data}{$player_js}							
 					</div>	
-					<div class="stui-player__detail detail">
+					<div class="numqiadi detail">
 						<div class="set">
 							<a class="cut" href="{$obj.player_info.link_pre}"><i class="iconfont icon-back"></i> 上一集</a>
 							<a class="cut" href="{$obj.player_info.link_next}">下一集 <i class="iconfont icon-more"></i></a>
@@ -39,16 +39,16 @@
 			<!-- end 播放器  -->
 			
 			<!-- 分享  -->
-			<div class="stui-pannel clearfix visible-xs">	
-				<div class="stui-mobile__shere">
+			<div class="thyzqiak clearfix visible-xs">	
+				<div class="fludvveo">
 					<a rel="nofollow" class="open-share" href="javascript:;"><i class="iconfont icon-share"></i> 分享到朋友圈</a>
 				</div>	
 			</div>
 			<!-- end 分享  -->
 			
 			<!-- 播放列表  -->
-			<div class="stui-pannel clearfix" id="playlist">	
-				<div class="stui-pannel__head clearfix">
+			<div class="thyzqiak clearfix" id="playlist">	
+				<div class="daofrbls clearfix">
 					<span class="text-muted pull-right hidden-xs">如果遇到不能播放建议尝试切换线路哦！</span>
 					<h3 class="title">
 						<i class="iconfont icon-link"></i> <span class="active-tab">播放地址</span>
@@ -64,16 +64,16 @@
 						</li>	
 					</ul>
 				</div>																			
-				<div class="tab-content stui-pannel_bd">
+				<div class="tab-content thyzqiak_bd">
 					{maccms:foreach name="obj.vod_play_list" id="vo"}	
 					<div id="playlist{$key}" class="tab-pane fade in {if condition="$param.sid eq $vo.sid"}active{/if} clearfix">
-						<ul class="stui-content__playlist playlink clearfix">
+						<ul class="isdobvbg playlink clearfix">
 							{maccms:foreach name="vo.urls" id="vo2"}						
 			                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
 			                {/maccms:foreach}
 						</ul>
 						<!--
-						<p class="stui-content__intro">
+						<p class="irlrqrnh__intro">
 							{$vo.player_info.tip}
 						</p>
 						-->
@@ -87,8 +87,8 @@
 			<!-- end 下载列表  -->
 							
 			<!-- 剧情介绍 -->
-			<div class="stui-pannel clearfix" id="desc">
-				<div class="stui-pannel__head clearfix">
+			<div class="thyzqiak clearfix" id="desc">
+				<div class="daofrbls clearfix">
 					<span class="text-muted pull-right">更新时间：{$obj.vod_time|date='Y-m-d',###}</span>
 					<h3 class="title">
 						<i class="iconfont icon-form"></i> 剧情介绍
@@ -104,14 +104,14 @@
 			<!-- end 剧情介绍 -->
 			
 			<!-- 猜你喜欢 -->
-			<div id="Carousel-2" class="stui-pannel carousel clearfix">				
-				<div class="stui-pannel__head clearfix">
+			<div id="Carousel-2" class="thyzqiak carousel clearfix">				
+				<div class="daofrbls clearfix">
 					<a class="more text-muted pull-right" href="#Carousel-2" data-slide="next"><i class="icon iconfont icon-refresh"></i> 换一换</a>
 					<h3 class="title">
 						<i class="iconfont icon-favorites"></i> 猜你喜欢
 					</h3>						
 				</div>
-				<div class="stui-pannel_bd carousel-inner">
+				<div class="thyzqiak_bd carousel-inner">
 					<ul class="stui-vodlist item active clearfix">
 						{maccms:vod num="12" type="current" order="desc" by="time"}
 						{include file="block/vod_box2"}		

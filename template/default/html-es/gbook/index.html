@@ -18,11 +18,11 @@
 <div class="container">
     <div class="row">
     	{include file="block/head"} 
-    	<div class="stui-pannel-left clearfix">   	
-     		<div class="stui-pannel clearfix"> 
+    	<div class="thyzqiak-left clearfix">   	
+     		<div class="thyzqiak clearfix"> 
      			<div class="col-pd clearfix">
      				<form class="gbook_form">   	     					
-     				<ul class="stui-gbook-form">	
+     				<ul class="mkogvqeh">	
 						<li>
 							<textarea class="form-control" name="gbook_content" rows="5" placeholder="请输入留言内容..."></textarea>
 						</li>													
@@ -33,7 +33,7 @@
      				</ul>
      				</form>
      			</div>
-				<div class="stui-pannel__head clearfix">
+				<div class="daofrbls clearfix">
 					<h3 class="title">
 						网友留言
 					</h3>						
@@ -58,10 +58,10 @@
     			</div>
     		</div>
     	</div>
-    	<div class="stui-pannel-side clearfix">
-    		<div class="stui-pannel clearfix">						
+    	<div class="thyzqiak-side clearfix">
+    		<div class="thyzqiak clearfix">						
 				{maccms:type ids="1,2" order="asc" by="sort" id="vo1" key="key1"}															
-				<div class="stui-pannel__head clearfix">
+				<div class="daofrbls clearfix">
 					<a class="text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="iconfont icon-more"></i></a>
 					<h3 class="title">
 						热门{$vo1.type_name}
@@ -69,7 +69,7 @@
 				</div>																																	
 				<ul class="stui-vodlist clearfix" style="margin-bottom: 15px;">
 					{maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}	
-					<li class="stui-vodlist__text">
+					<li class="cdsyziwz">
 						<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
 							<i class="iconfont icon-more text-ccc pull-right"></i>
 							{$vo.vod_name}

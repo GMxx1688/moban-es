@@ -10,9 +10,9 @@
         <div class="row">
         	{include file="block/head"}
         	
-            <div class="stui-pannel clearfix">
+            <div class="thyzqiak clearfix">
 				<!-- 筛选 -->
-				<ul class="stui-screen__list top type-slide clearfix">
+				<ul class="yjxpqixs top type-slide clearfix">
 					<li>
 						<span class="text-muted">按类型</span>
 					</li>
@@ -27,7 +27,7 @@
 	                {/maccms:foreach}
 	                {/empty}							
 				</ul>
-				<ul class="stui-screen__list type-slide clearfix">
+				<ul class="yjxpqixs type-slide clearfix">
 					<li>
 						<span class="text-muted">按地区</span>
 					</li>
@@ -42,7 +42,7 @@
 	                    {/maccms:foreach}
 	                {/empty}
 				</ul>
-				<ul class="stui-screen__list type-slide typeno clearfix">
+				<ul class="yjxpqixs type-slide typeno clearfix">
 					<li>
 						<span class="text-muted">按年份</span>
 					</li>
@@ -58,7 +58,7 @@
 	                {/empty}							
 				</ul>
 				<div class="screen-hide">
-					<ul class="stui-screen__list type-slide clearfix">
+					<ul class="yjxpqixs type-slide clearfix">
 						<li>
 							<span class="text-muted">按语言</span>
 						</li>
@@ -73,7 +73,7 @@
 		                    {/maccms:foreach}
 		                {/empty}							
 					</ul>				
-					<ul class="stui-screen__list letter-list type-slide clearfix">
+					<ul class="yjxpqixs letter-list type-slide clearfix">
 						<li>
 							<span class="text-muted">按字母</span>
 						</li>
@@ -83,13 +83,13 @@
 		                {/maccms:foreach}							
 					</ul>
 				</div>
-				<div class="stui-screen__ft">
+				<div class="ynfzkcto">
 					<a href="javascript:;" class="screen-open"><i class="iconfont icon-add"></i> 更多选项</a>
 				</div>	
 				<!-- end 筛选 -->
 				
 				<!-- nav -->
-				<ul class="stui-pannel__nav clearfix">
+				<ul class="nieofsig clearfix">
 					<li {if condition="$param.by eq '' || $param.by eq 'time'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}">按时间</a></li>
 			        <li {if condition="$param.by eq 'hits'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}">按人气</a></li>
 			        <li {if condition="$param.by eq 'score'"} class="active"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}">按评分</a></li>					
