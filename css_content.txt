@@ -44,7 +44,7 @@ a:focus,a:hover,a:active{ text-decoration:none;}
 .stui-header__hd{ height: 100px; padding: 0 20px;}
 .stui-header__logo{float:left; margin-right: 30px;}
 .stui-header__logo{ width: 282px; margin-top: 20px}
-.stui-header__logo .logo{display:block; width: 282px; height:60px; background:url(../img/logo_max.png) no-repeat;background-position:50% 50%;background-size:cover}
+.stui-header__logo .logo{display:block; width: 282px; height:60px; background:url(../img/a.png) no-repeat;background-position:50% 50%;background-size:cover}
 .stui-header__search{ float:left; position:relative; width:280px; margin-top: 30px; margin-left: 60px; padding: 5px; border-radius: 4px; background-color: rgba(255,255,255,.6);}
 .stui-header__search .form-control{display:block; width:100%; height:35px; line-height: 35px; padding:0 45px 0 10px; font-size:12px; line-height:32px; border-radius: 4px; transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s; background-color:#f5f5f5; color: #999; border: 0;}
 .stui-header__search .submit{display:block; position:absolute; top: 5px; right: 5px; width:35px; height:35px; border: 0; cursor: pointer; background: url(../img/icon_seacrh.png) center no-repeat;}
@@ -291,7 +291,7 @@ a:focus,a:hover,a:active{ text-decoration:none;}
     .stui-header__top{position:fixed;top:0;z-index:999;width:100%;height:60px; border-radius: 0; background-size: 390px !important;}
 	.stui-header__hd{ height: 60px; padding: 0 10px;}
     .stui-header__logo{ width: 127px; margin: 15px 0 0; padding: 0;}
-    .stui-header__logo .logo{width: 127px; height:30px;background:url(../img/logo_min.png) no-repeat;background-position:50% 50%;background-size:cover}
+    .stui-header__logo .logo{width: 127px; height:30px;background:url(../img/a.png) no-repeat;background-position:50% 50%;background-size:cover}
     .stui-header__search{ float: none; width: auto; margin: 5px 0 0; padding: 0; position: absolute; top: 10px; right: 80px; left: 147px;}
     .stui-header__search .form-control{ height: 30px; line-height: 30px; border-radius: 5px; padding:6px 40px 6px 10px; border: 0;}
     .stui-header__search .submit{ top: 0; right: 0; width: 30px; height: 30px;}   
