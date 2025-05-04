@@ -1,0 +1,17 @@
+<title>{$obj.vod_area}剧《{$obj.vod_name}》全集在线观看{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}-{:get_keywords($obj.vod_id)}{else}{$obj.type.type_name}{/if}-ES影院</title>
+<meta name="keywords" content="{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}{:get_keywords($obj.vod_id)}{else}{$obj.vod_name}{/if},{$obj.vod_name}在线观看,{$obj.vod_name}全集,{$obj.vod_name}完整版" />
+<meta name="description" content="ES影院推荐的{$obj.vod_name}在线观看免费播放地址由网友上传至ES影院，这是一部由{$obj.vod_actor} 领衔主演，本片上映于{$obj.vod_year}年，导演是{$obj.vod_director}，语言是{$obj.vod_lang}，{$obj.vod_name}讲述了:{$obj.vod_blurb|mac_filter_html}" />
+<meta property="og:title" content="{$obj.vod_area}剧《{$obj.vod_name}》全集在线观看{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}-{:get_keywords($obj.vod_id)}{else}{$obj.type.type_name}{/if}-ES影院">
+<meta property="og:keywords" content="{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}{:get_keywords($obj.vod_id)}{else}{$obj.vod_name}{/if},{$obj.vod_name},{$obj.vod_name}在线观看,{$obj.vod_name}全集,{$obj.vod_name}完整版">
+<meta property="og:description" content="ES影院推荐的{$obj.vod_name}在线观看免费播放地址由网友上传至ES影院，这是一部由{$obj.vod_actor} 领衔主演，本片上映于{$obj.vod_year}年，导演是{$obj.vod_director}，语言是{$obj.vod_lang}，{$obj.vod_name}讲述了:{$obj.vod_blurb|mac_filter_html}"/>
+<meta property="og:type" content="{$obj.type.type_name}" />
+<meta property="og:video:area" content="{$obj.vod_area}" />
+<meta property="og:video:language" content="{$obj.vod_lang}" />
+<meta property="og:video:class" content="{$obj.vod_class} 剧" />
+<meta property="og:video:director" content="{$obj.vod_director}" />
+<meta property="og:video:actor" content="{$obj.vod_actor}" />
+<meta property="og:video:update_date" content="{$obj.vod_time|mac_day}" />
+<meta property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_detail($obj)}" />
+<meta property="og:video" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])} " />
+<meta property="og:image" content="{$obj.vod_pic}" />
+<meta property="og:description" content="{$obj.vod_name}在线观看" />

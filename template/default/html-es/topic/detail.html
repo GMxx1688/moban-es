@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/topic_detail"} 
+		{include file="block/include"}
+	</head>
+	<body>
+			
+		<div class="container">
+			<div class="row">
+				
+				{include file="block/head"}
+				
+				<!-- 详细信息 -->
+				<div class="stui-pannel clearfix">
+					<div class="col-pd">				
+						<p><img class="img-responsive" src="{$obj.topic_pic}"/></p>
+					    <h3>{$obj.topic_name}</h3>
+					    <p class="text-muted">{$obj.topic_content|mac_filter_html}</p>
+					</div>											
+				</div>
+				<!-- end 详细信息 -->
+				
+				<div class="stui-pannel clearfix">
+					<!-- 列表 -->
+					<ul class="stui-vodlist clearfix">
+						{maccms:foreach name="$obj.vod_list"}
+						{include file="block/vod_box"}													
+						{/maccms:foreach}	 
+					</ul>
+					<!-- end 列表 -->		
+				</div>																		
+			</div>
+		</div>
+		<span style="display:none" class="mac_ulog_set" alt="设置专题内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.topic_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+		{include file="block/foot"}
+	</body>
+</html>

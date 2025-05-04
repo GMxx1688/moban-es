@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_play"}   
+	{include file="block/include"}
+	<script type="text/javascript" src="{$maccms.path}statics/js/history.js"></script>
+	<script type="text/javascript">var vod_name='{$obj.vod_name|mac_substring=10}',vod_url=window.location.href,vod_part='{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}';</script>
+</head>
+<body>
+	
+    <div class="container">
+        <div class="row">
+        	{include file="block/head"}  	       	
+			<!-- 播放器  -->
+			<div class="stui-pannel clearfix">																
+				<div class="stui-player col-pd">
+					<div class="stui-player__video embed-responsive embed-responsive-16by9 clearfix">
+						{$player_data}{$player_js}							
+					</div>	
+					<div class="stui-player__detail detail">
+						<div class="set">
+							<a class="cut" href="{$obj.player_info.link_pre}"><i class="iconfont icon-back"></i> 上一集</a>
+							<a class="cut" href="{$obj.player_info.link_next}">下一集 <i class="iconfont icon-more"></i></a>
+							<span class="bdsharebuttonbox hidden-xs">
+								<a  rel="nofollow" class="cut bds_more" data-cmd="more" href="" style="float: none; background: #f5f5f5; margin: 0; padding: 0;">分享 <i class="iconfont icon-share"></i> </a>
+							</span>	
+						</div>
+						<h4 class="title">{$obj.vod_name}</h4>
+						<p class="data margin-0">
+							<span class="text-muted">类型：</span>{$obj.vod_class}
+							<span class="split-line"></span>
+							<span class="text-muted">地区：</span>{$obj.vod_area}
+							<span class="split-line"></span>
+							<span class="text-muted">年份：</span>{$obj.vod_year}		
+						</p>										
+					</div>																									
+				</div>									
+			</div>	
+			<!-- end 播放器  -->
+			
+			<!-- 分享  -->
+			<div class="stui-pannel clearfix visible-xs">	
+				<div class="stui-mobile__shere">
+					<a rel="nofollow" class="open-share" href="javascript:;"><i class="iconfont icon-share"></i> 分享到朋友圈</a>
+				</div>	
+			</div>
+			<!-- end 分享  -->
+			
+			<!-- 播放列表  -->
+			<div class="stui-pannel clearfix" id="playlist">	
+				<div class="stui-pannel__head clearfix">
+					<span class="text-muted pull-right hidden-xs">如果遇到不能播放建议尝试切换线路哦！</span>
+					<h3 class="title">
+						<i class="iconfont icon-link"></i> <span class="active-tab">播放地址</span>
+					</h3>
+					<ul class="tab">										
+						<li class="dropdown">
+							<a href="javascript:;" class="text-red" data-toggle="dropdown">切换线路 <i class="iconfont icon-moreunfold"></i></a>
+							<ul class="dropdown-menu">
+								{maccms:foreach name="obj.vod_play_list" id="vo"}	
+								<li><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}	</a></li>
+								{/maccms:foreach}
+							</ul>
+						</li>	
+					</ul>
+				</div>																			
+				<div class="tab-content stui-pannel_bd">
+					{maccms:foreach name="obj.vod_play_list" id="vo"}	
+					<div id="playlist{$key}" class="tab-pane fade in {if condition="$param.sid eq $vo.sid"}active{/if} clearfix">
+						<ul class="stui-content__playlist playlink clearfix">
+							{maccms:foreach name="vo.urls" id="vo2"}						
+			                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+			                {/maccms:foreach}
+						</ul>
+						<!--
+						<p class="stui-content__intro">
+							{$vo.player_info.tip}
+						</p>
+						-->
+					</div>															
+					{/maccms:foreach}
+				</div>
+			</div>		
+			<!-- end 播放列表  -->
+			
+			<!-- 下载列表  -->
+			<!-- end 下载列表  -->
+							
+			<!-- 剧情介绍 -->
+			<div class="stui-pannel clearfix" id="desc">
+				<div class="stui-pannel__head clearfix">
+					<span class="text-muted pull-right">更新时间：{$obj.vod_time|date='Y-m-d',###}</span>
+					<h3 class="title">
+						<i class="iconfont icon-form"></i> 剧情介绍
+					</h3>						
+				</div>																		
+				<div class="stui-contpent__desc col-pd clearfix">
+				   <p> 关键词：{$obj.vod_tag|mac_url_create='tag','vod','search'}</p>
+				ES影院推荐《{if condition="$obj.type_id_"}{elseif condition="$obj.type_id eq 6"/}{:get_keywords($obj.vod_id)}{else}{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}{/if}》免费观看全集高清地址，《{$obj.vod_name}》是一部十分好看的{$obj.vod_class} {$obj.type.type_name} ，《{$obj.vod_name}》是一部上映在{$obj.vod_area}的{$obj.vod_lang}{$obj.type.type_name}，由{$obj.vod_actor}主演，{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}的剧情简介：<p>{$obj.vod_content|mac_filter_html}</p>
+
+										
+				</div>				
+			</div>
+			<!-- end 剧情介绍 -->
+			
+			<!-- 猜你喜欢 -->
+			<div id="Carousel-2" class="stui-pannel carousel clearfix">				
+				<div class="stui-pannel__head clearfix">
+					<a class="more text-muted pull-right" href="#Carousel-2" data-slide="next"><i class="icon iconfont icon-refresh"></i> 换一换</a>
+					<h3 class="title">
+						<i class="iconfont icon-favorites"></i> 猜你喜欢
+					</h3>						
+				</div>
+				<div class="stui-pannel_bd carousel-inner">
+					<ul class="stui-vodlist item active clearfix">
+						{maccms:vod num="12" type="current" order="desc" by="time"}
+						{include file="block/vod_box2"}		
+						{/maccms:vod}
+					</ul>
+					<ul class="stui-vodlist item clearfix">
+						{maccms:vod num="12" type="current" order="desc" by="hits"}
+						{include file="block/vod_box2"}		
+						{/maccms:vod}
+					</ul>
+					<ul class="stui-vodlist item clearfix">
+						{maccms:vod num="12" ids="'.$obj['vod_rel_vod'].'" order="desc" by="time"}
+						{include file="block/vod_box2"}		
+						{/maccms:vod}
+					</ul>
+				</div>
+			</div>
+			<!-- end 猜你喜欢 -->
+        </div>
+        <div class="text" style=" text-align:center;"> 若ES影院收录的节目无意侵犯了贵司版权<br>请在留言处留言 我们会在3日内删除侵权内容，谢谢。</div>
+    </div>
+    <script type="text/javascript">$(".MacPlayer").addClass("embed-responsive").css("padding-bottom","56.25%");</script>
+<span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	{include file="block/foot"}
+</body>
+</html>
