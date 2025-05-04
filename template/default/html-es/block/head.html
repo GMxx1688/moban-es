@@ -1,16 +1,16 @@
-<div class="feeobvrn clearfix" id="header-top">
-	<div class="phpgynbv clearfix">	
-		<div class="sgcioqya">
+<div class="stui-header clearfix" id="header-top">
+	<div class="stui-header__logo clearfix">	
+		<div class="stui-header__logo-img">
 			<a class="logo" href="{$maccms.path}"></a>										  
 		</div>				
 		
-		<div class="xjbhxygf"> 
+		<div class="stui-header__search"> 
 			<form id="search" name="search" method="get" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
 				<input type="text" id="wd" name="wd" class="form-control" value="{$param.wd}" placeholder="请输入关键词..."/>
 				<button class="submit" id="searchbutton" type="submit" name="submit"></button>							
 			</form>
 		</div>
-		<ul class="iypafwfq">	
+		<ul class="stui-header__menu">	
 			<!--<li class="hidden-xs">
 				<a class="icon_gbook" href="{:mac_url('gbook/index')}" title="留言反馈"></a>
 			</li>-->
@@ -58,7 +58,7 @@
 			</li>-->
 		</ul>
 	</div>
-	<div class="xsjduqdl clearfix">
+	<div class="stui-header__menu-nav clearfix">
 		<span class="more hidden-xs">今日更新 <font color="#FF4A4A">{:mac_data_count(0,'today','vod')}</font> 部影片</span>	  			  	
 		<ul class="clearfix">	  		
 			<li {if condition="$maccms.aid eq 1"}class="active"{/if}><a href="{$maccms.path}">首页</a></li>
