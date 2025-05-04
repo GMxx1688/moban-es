@@ -1,12 +1,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="renderer" content="webkit">
 <meta name="apple-mobile-web-app-title" content="ES影院">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{:mac_url('rss/baidu')}" />
 <meta http-equiv="mobile-agent" content="format=[wml|xhtml|html5]; url=http://{$maccms.site_wapurl}<?php echo $_SERVER["REQUEST_URI"]; ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="canonical" content='<?php echo "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>'>
-<link rel="shortcut icon" href="{$maccms.path}statics/img/favicon.ico" type="image/x-icon" />	
+<link rel="canonical" href='<?php echo "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>'>
+<link rel="shortcut icon" href="{$maccms.path}statics/img/favicon.ico" type="image/x-icon" />
+
+<!-- 预连接到 CDN 域名 -->
+<link rel="preconnect" href="https://lf6-cdn-tos.bytecdntp.com">
+<link rel="preconnect" href="https://lib.sinaapp.com">
+
+<!-- 内联关键 CSS -->
+<style>
+/* 关键渲染路径CSS */
+body{margin:0;padding-top:50px;font-family:'Helvetica Neue','STHeiti','微软雅黑','Microsoft YaHei',Helvetica,Arial,sans-serif;font-size:14px;line-height:140%}
+.container{width:990px;position:relative;padding-right:15px;padding-left:15px;margin:0 auto}
+.row{position:relative;margin-right:-15px;margin-left:-15px;background-color:#fff;border-radius:4px;border:1px solid #eee}
+.site-header-top{position:fixed;top:0;z-index:999;width:100%;min-height:50px}
+.site-header-logo{float:left;margin-top:5px;width:150px;height:40px}
+
+/* 面包屑导航样式 */
+.site-breadcrumb{padding:10px 15px;background-color:#f5f5f5;border-radius:4px;margin-bottom:15px;}
+.breadcrumb-list{padding:0;margin:0;list-style:none;display:flex;flex-wrap:wrap;}
+.breadcrumb-item{display:inline-block;margin-right:5px;color:#333;}
+.breadcrumb-item:after{content:"/";margin-left:5px;color:#ccc;}
+.breadcrumb-item:last-child:after{content:"";}
+.breadcrumb-item a{color:#333;text-decoration:none;}
+.breadcrumb-item.active{color:#999;}
+
+/* 修复文本溢出问题 */
+.text-overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;}
+.movie-desc{white-space:normal;word-wrap:break-word;max-height:none;overflow:visible;}
+</style>
+
 <link rel="stylesheet" href="{$maccms.path}statics/font/iconfont.css" type="text/css" />
 <link rel="stylesheet" href="{$maccms.path}statics/css/stui_default.css" type="text/css" />
 <link rel="stylesheet" href="{$maccms.path}statics/css/stui_color-gray.css" type="text/css" name="skin"/>
@@ -17,4 +45,19 @@
 <script type="text/javascript" src="{$maccms.path}static/js/home.js"></script>
 <script type="text/javascript" src="{$maccms.path}static/js/jquery.autocomplete.js"></script>
 <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+
+<!-- 添加结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ES影院",
+  "url": "{$maccms.http_type}{$maccms.site_url}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{$maccms.http_type}{$maccms.site_url}{:mac_url('vod/search')}?wd={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <meta name="referrer" content="never"/>
