@@ -1,0 +1,208 @@
+/* 
+ * Site Header Styles
+ * This file contains all styles for the site-header-* components
+ */
+
+/* Header Top Container */
+.site-header-top {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  min-height: 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+
+/* Header Content Container */
+.site-header-hd {
+  height: 50px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.site-header-logo {
+  float: left;
+  margin-top: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.site-header-logo .logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+/* Search */
+.site-header-search {
+  float: left;
+  position: relative;
+  width: 280px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.site-header-search .form-control {
+  display: block;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 45px 0 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #999;
+  border: 0;
+}
+
+.site-header-search .submit {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* User Menu */
+.site-header-user {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header-user > li {
+  float: left;
+  position: relative;
+  padding: 15px 0;
+  margin-left: 15px;
+}
+
+.site-header-user > li > span,
+.site-header-user > li > a {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-size: 28px !important;
+  cursor: pointer;
+}
+
+.site-header-user > li .dropdown {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 100%;
+  right: -15px;
+  padding: 15px;
+  font-size: 12px;
+  color: #999;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  border-radius: 4px;
+}
+
+.site-header-user > li .dropdown:before {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -5px;
+  right: 22px;
+  background-color: #fff;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: #eee;
+}
+
+.site-header-user > li:hover .dropdown {
+  display: block;
+}
+
+/* Menu */
+.site-header-menu {
+  position: relative;
+  margin: 0;
+  background-color: #333;
+  height: 40px;
+}
+
+.site-header-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header-menu li {
+  float: left;
+}
+
+.site-header-menu li a {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header-menu li.active a,
+.site-header-menu li a:hover {
+  background-color: #444;
+}
+
+.site-header-menu .more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 20px;
+  line-height: 40px;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .site-header-top {
+    height: auto;
+  }
+  
+  .site-header-hd {
+    height: auto;
+    padding: 10px;
+  }
+  
+  .site-header-logo {
+    width: 120px;
+    height: 30px;
+    margin-top: 0;
+  }
+  
+  .site-header-search {
+    width: auto;
+    margin-left: 10px;
+    margin-top: 0;
+  }
+  
+  .site-header-user > li {
+    padding: 5px 0;
+    margin-left: 10px;
+  }
+  
+  .site-header-menu li a {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+}
+
